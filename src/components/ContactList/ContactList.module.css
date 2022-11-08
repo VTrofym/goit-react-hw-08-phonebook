@@ -1,0 +1,27 @@
+.list{
+  padding: 0 10px;
+  padding-bottom: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.item{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end
+}
+
+.name{
+  color: indigo;
+  font-size: 14px;
+}
+
+.phone{
+  color: indigo;
+  font-size: 14px;
+}
+
+.button{
+  margin-left: 20px;
+  background-color: rgba(1, 1, 255, 0.281);
+}
