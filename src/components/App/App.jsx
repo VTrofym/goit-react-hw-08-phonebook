@@ -6,7 +6,8 @@ import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 
 import css from './App.module.css';
-import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+// import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+// import LoginForm from 'components/RegistrationForm/LoginForm/LoginFomr';
 
 // import Register from 'pages/Register';
 // import Login from 'pages/Login';
@@ -25,20 +26,11 @@ export const App = () => {
           <Route path="/contacts" element={} />
         </Routes>
       </Suspense> */}
-      <RegistrationForm />
+      {/* <RegistrationForm />
+      <LoginForm /> */}
       <ContactForm />
       <Filter />
       <ContactList />
     </div>
   );
 };
-
-// export const App = () => {
-//   return (
-//     <div className={css.allContent}>
-//       <ContactForm />
-//       <Filter />
-//       <ContactList />
-//     </div>
-//   );
-// };
