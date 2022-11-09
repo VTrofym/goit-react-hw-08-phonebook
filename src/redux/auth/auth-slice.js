@@ -1,32 +1,51 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchStatus } from './fetchStatus';
+import { login, registration } from './auth-operations';
 
-// здесь информация от бекенда
 const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
-}
+  status: fetchStatus.init
+};
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [authOperations.register.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
+    [registration.pending](state) {
+      state.status = fetchStatus.loading
     },
-    [authOperations.logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
+    [registration.fulfilled](state, action) {
+      state.status = fetchStatus.success
+      state.user = action.payload.user
+      state.token = action.payload.token
+      state.isLoggedIn = true
     },
-    [authOperations.logIn.fulfilled](state) {
-      state.user = { name: null, email: null };
-      state.token = null;
-      state.isLoggedIn = false;
-    }
-  },
-})
+    [registration.rejected](state) {
+      state.status = fetchStatus.error
+      state.user.name = null
+      state.user.email = null
+      state.isLoggedIn = false
+      state.token = null
+    },
 
-export default authSlice.reducer
+    [login.pending](state) {
+      state.status = fetchStatus.loading
+    },
+    [login.fulfilled](state, action) {
+      state.status = fetchStatus.success
+      state.user = action.payload.user
+      state.token = action.payload.token
+      state.isLoggedIn = true
+    },
+    [login.rejected](state) {
+      state.status = fetchStatus.error
+      state.user.name = null
+      state.user.email = null
+      state.isLoggedIn = false
+      state.token = null
+    },
+  },
+});
+export default authSlice.reducer;

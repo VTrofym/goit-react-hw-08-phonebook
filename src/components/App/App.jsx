@@ -6,6 +6,7 @@ import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 
 import css from './App.module.css';
+import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 // import Register from 'pages/Register';
 // import Login from 'pages/Login';
@@ -24,6 +25,7 @@ export const App = () => {
           <Route path="/contacts" element={} />
         </Routes>
       </Suspense> */}
+      <RegistrationForm />
       <ContactForm />
       <Filter />
       <ContactList />

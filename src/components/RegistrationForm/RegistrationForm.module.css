@@ -1,0 +1,19 @@
+.form{
+  display: grid;
+  background-color: bisque;
+}
+
+.label{
+  width: 500px;
+  background-color: bisque;
+}
+
+.input{
+    width: 500px;
+    background-color: bisque;
+}
+
+.button{
+  width: 200px;
+  background-color: blueviolet;
+}
