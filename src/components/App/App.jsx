@@ -1,4 +1,3 @@
-// import { Route, Routes } from 'react-router-dom';
 // import { lazy } from 'react';
 // import { Suspense } from 'react';
 import { ContactList } from 'components/ContactList';
@@ -6,11 +5,10 @@ import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 
 import css from './App.module.css';
-// import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
-// import LoginForm from 'components/RegistrationForm/LoginForm/LoginFomr';
-
-// import Register from 'pages/Register';
-// import Login from 'pages/Login';
+import Layout from 'components/Layout/Layout';
+import { Route, Routes } from 'react-router-dom';
+import { Registration } from 'pages/Registration';
+import { Login } from 'pages/Login';
 
 // const Register = lazy(() => import('../../pages/Register'));
 // const Login = lazy(() => import('../../pages/Login'));
@@ -18,19 +16,16 @@ import css from './App.module.css';
 
 export const App = () => {
   return (
+    // <Layout>
+    // <Routes>
+    //   <Route path="/registration" element={<Registration />} />
+    //   <Route path="/login" element={<Login />} />
+    // </Routes>
     <div className={css.allContent}>
-      {/* <Suspense fallback={<p>Loading...</p>}>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contacts" element={} />
-        </Routes>
-      </Suspense> */}
-      {/* <RegistrationForm />
-      <LoginForm /> */}
       <ContactForm />
       <Filter />
       <ContactList />
     </div>
+    // {/* </Layout> */}
   );
 };
