@@ -16,16 +16,16 @@ import { Login } from 'pages/Login';
 
 export const App = () => {
   return (
-    // <Layout>
-    // <Routes>
-    //   <Route path="/registration" element={<Registration />} />
-    //   <Route path="/login" element={<Login />} />
-    // </Routes>
-    <div className={css.allContent}>
-      <ContactForm />
-      <Filter />
-      <ContactList />
-    </div>
-    // {/* </Layout> */}
+    <Layout>
+      <Routes>
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <div className={css.allContent}>
+        <ContactForm />
+        <Filter />
+        <ContactList />
+      </div>
+    </Layout>
   );
 };
