@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-import { getApiAllContacts, addContact, deleteContact } from './operations'; 
+import { getAllUserContacts, postNewContact, removeContact } from 'redux/auth/auth-operations';
 
 const Status = {
   init: "INIT",
@@ -18,36 +17,36 @@ export const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
   extraReducers: {
-    [getApiAllContacts.pending](state) {
+    [getAllUserContacts.pending](state) {
       state.status = Status.loading
     },
-    [getApiAllContacts.fulfilled](state, action) {
+    [getAllUserContacts.fulfilled](state, action) {
       state.status = Status.success
       state.contacts = [...action.payload]
     },
-    [getApiAllContacts.rejected](state) {
+    [getAllUserContacts.rejected](state) {
       state.status = Status.error
     },
 
-    [addContact.pending](state) {
+    [postNewContact.pending](state) {
       state.status = Status.loading
     },
-    [addContact.fulfilled](state, action) {
+    [postNewContact.fulfilled](state, action) {
       state.status = Status.success
       state.contacts = [...state.contacts, action.payload]
     },
-    [addContact.rejected](state) {
+    [postNewContact.rejected](state) {
       state.status = Status.error
     },
 
-    [deleteContact.pending](state) {
+    [removeContact.pending](state) {
       state.status = Status.loading
     },
-    [deleteContact.fulfilled](state, action) {
+    [removeContact.fulfilled](state, action) {
       state.status = Status.success
       state.contacts=state.contacts.filter(contact=>contact.id !== action.payload.id)
     },
-    [deleteContact.rejected](state) {
+    [removeContact.rejected](state) {
       state.status = Status.error
     },
   }

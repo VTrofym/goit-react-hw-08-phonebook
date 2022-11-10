@@ -11,7 +11,7 @@ import { Registration } from 'pages/Registration';
 import { Authorization } from 'pages/Authorization';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { current } from 'redux/auth/auth-operations';
+import { currentUser } from 'redux/auth/auth-operations';
 
 // const Register = lazy(() => import('../../pages/Register'));
 // const Login = lazy(() => import('../../pages/Login'));
@@ -21,7 +21,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(current());
+    dispatch(currentUser());
   }, []);
 
   return (
