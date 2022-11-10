@@ -22,7 +22,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(currentUser());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Layout>
