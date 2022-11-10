@@ -30,10 +30,10 @@ export default function RegistrationForm() {
 
   return (
     <>
-      <h3>Реєстрація</h3>
+      <h3>Registration</h3>
       <form onSubmit={handleFormSubmit} className={css.form}>
         <label className={css.label}>
-          Введіть імя
+          Name
           <input
             className={css.input}
             type="text"
@@ -44,7 +44,7 @@ export default function RegistrationForm() {
           />
         </label>
         <label className={css.label}>
-          Введіть пошту
+          Email
           <input
             className={css.input}
             required
@@ -55,7 +55,7 @@ export default function RegistrationForm() {
           />
         </label>
         <label className={css.label}>
-          Введіть пароль
+          Password
           <input
             className={css.input}
             required
@@ -65,7 +65,9 @@ export default function RegistrationForm() {
             type="password"
           />
         </label>
-        <button type="submit" className={css.button}></button>
+        <button type="submit" className={css.button}>
+          Registration
+        </button>
       </form>
     </>
   );

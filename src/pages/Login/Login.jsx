@@ -18,28 +18,31 @@ export const Login = () => {
     dispatch(login({ email, password }));
   };
   return (
-    <form onSubmit={onSubmit}>
-      <label>
-        Enter your email
-        <input
-          required
-          onChange={onInput}
-          name="email"
-          value={email}
-          type="email"
-        />
-      </label>
-      <label>
-        Enter your password
-        <input
-          required
-          onChange={onInput}
-          name="password"
-          value={password}
-          type="password"
-        />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <>
+      <h3>Authorization</h3>
+      <form onSubmit={onSubmit}>
+        <label>
+          Email
+          <input
+            required
+            onChange={onInput}
+            name="email"
+            value={email}
+            type="email"
+          />
+        </label>
+        <label>
+          Password
+          <input
+            required
+            onChange={onInput}
+            name="password"
+            value={password}
+            type="password"
+          />
+        </label>
+        <button type="submit">Login</button>
+      </form>
+    </>
   );
 };
