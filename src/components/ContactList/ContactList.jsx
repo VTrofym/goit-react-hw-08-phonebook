@@ -22,8 +22,9 @@ export function ContactList() {
     <ul className={css.list}>
       {allContacts.map(contact => (
         <li key={contact.id} className={css.item}>
-          <span className={css.name}>{contact.name}:</span>
-          <span className={css.phone}> {contact.number}</span>
+          <p className={css.name}>
+            {contact.name}: {contact.number}
+          </p>
           <button
             className={css.button}
             id={contact.id}

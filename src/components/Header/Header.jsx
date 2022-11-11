@@ -35,7 +35,11 @@ export const Header = () => {
           )}
         </ul>
         {token && (
-          <button type="button" onClick={() => dispatch(logout())}>
+          <button
+            type="button"
+            onClick={() => dispatch(logout())}
+            className={css.button}
+          >
             Logout
           </button>
         )}

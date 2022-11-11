@@ -8,7 +8,8 @@
 .item{
   list-style: none;
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .name{
@@ -16,12 +17,10 @@
   font-size: 14px;
 }
 
-.phone{
-  color: indigo;
-  font-size: 14px;
-}
-
 .button{
   margin-left: 20px;
   background-color: rgba(1, 1, 255, 0.281);
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
 }

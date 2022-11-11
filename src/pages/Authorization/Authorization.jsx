@@ -44,7 +44,9 @@ export const Authorization = () => {
             type="password"
           />
         </label>
-        <button type="submit">Login</button>
+        <button type="submit" className={css.button}>
+          Login
+        </button>
       </form>
     </div>
   );
