@@ -4,6 +4,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 // для  зарегестрированных
 export default function PrivateRoutes() {
-  const isLoggedIn = useSelector(); /// прописать
-  return isLoggedIn ? <Outlet /> : <Navigate to="/login" />;
+  const token = useSelector(state => state.auth.token);
+  return token ? <Outlet /> : <Navigate to="/login" />;
 }
