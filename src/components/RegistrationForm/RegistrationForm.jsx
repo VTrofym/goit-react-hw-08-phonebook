@@ -57,6 +57,7 @@ export default function RegistrationForm() {
         <label className={css.label}>
           Password
           <input
+            minLength={7}
             className={css.input}
             required
             onChange={handleInput}

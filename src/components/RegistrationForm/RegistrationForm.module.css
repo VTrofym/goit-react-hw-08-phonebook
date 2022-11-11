@@ -20,7 +20,8 @@
 
 .label{
   text-align: center;
-  width: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .input{
