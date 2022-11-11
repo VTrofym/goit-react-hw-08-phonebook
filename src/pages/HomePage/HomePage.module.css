@@ -1,7 +1,23 @@
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
 .home{
   text-align: center;
   font-weight: 400;
   font-size: 40px;
   line-height: 1.1;
-  color: rgb(214, 181, 181);
+  color: rgb(208, 166, 166);
+}
+
+.photoBox{
+  width: 90vw;
+}
+
+.photo{
+  width: inherit;
 }

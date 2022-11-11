@@ -36,6 +36,7 @@ export const Authorization = () => {
         <label className={css.label}>
           Password
           <input
+            minLength={7}
             className={css.input}
             required
             onChange={onInput}

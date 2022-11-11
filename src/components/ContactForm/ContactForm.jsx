@@ -45,9 +45,8 @@ export const ContactForm = () => {
     <>
       <h1 className={css.title}>Phonebook</h1>
       <form className={css.boxInput} onSubmit={handleSubmit}>
-        <label>
+        <label className={css.label}>
           Name
-          <br />
           <input
             value={name}
             onChange={handleChange}
@@ -60,9 +59,8 @@ export const ContactForm = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={css.label}>
           Numbers
-          <br />
           <input
             onChange={handleChange}
             value={number}

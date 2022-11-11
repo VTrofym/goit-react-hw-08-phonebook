@@ -24,7 +24,7 @@ const authSlice = createSlice({
     },
     [registration.rejected](state) {
       state.status = fetchStatus.error
-      state.user.name = null
+      state.user.name = ''
       state.user.email = null
       state.isLoggedIn = false
       state.token = null
