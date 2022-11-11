@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registration } from 'redux/auth/auth-operations';
-import css from './RegistrationForm';
+import css from './RegistrationForm.module.css';
 
 export default function RegistrationForm() {
   const [name, setName] = useState('');
@@ -29,8 +29,8 @@ export default function RegistrationForm() {
   };
 
   return (
-    <>
-      <h3>Registration</h3>
+    <div className={css.block}>
+      <h3 className={css.title}>Registration</h3>
       <form onSubmit={handleFormSubmit} className={css.form}>
         <label className={css.label}>
           Name
@@ -69,6 +69,6 @@ export default function RegistrationForm() {
           Registration
         </button>
       </form>
-    </>
+    </div>
   );
 }

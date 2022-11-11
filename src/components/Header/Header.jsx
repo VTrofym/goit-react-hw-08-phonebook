@@ -1,29 +1,36 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from 'redux/auth/auth-operations';
-// import { FcHome } from 'react-icons/fa';
+import { FcHome } from 'react-icons/fc';
+import css from './Header.module.css';
 
 export const Header = () => {
   const dispatch = useDispatch();
   const token = useSelector(state => state.auth.token);
   return (
-    <header>
+    <header className={css.header}>
       <nav>
-        {!token && (
-          <NavLink to="/">
-            HomePage
-            {/* <FcHome /> */}
+        <NavLink to="/">
+          <FcHome size={40} />
+        </NavLink>
+        {token && (
+          <NavLink to="/contacts" className={css.link}>
+            Contacts
           </NavLink>
         )}
-        <ul>
+        <ul className={css.ul}>
           {!token && (
-            <li>
-              <NavLink to="/registration">Registration</NavLink>
+            <li className={css.li}>
+              <NavLink to="/registration" className={css.link}>
+                Registration
+              </NavLink>
             </li>
           )}
           {!token && (
-            <li>
-              <NavLink to="/login">Authorization</NavLink>
+            <li className={css.li}>
+              <NavLink to="/login" className={css.link}>
+                Authorization
+              </NavLink>
             </li>
           )}
         </ul>

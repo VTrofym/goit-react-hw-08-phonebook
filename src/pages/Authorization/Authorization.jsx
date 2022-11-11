@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
+import css from './Authorization.module.css';
 
 export const Authorization = () => {
   const [email, setEmail] = useState('');
@@ -18,12 +19,13 @@ export const Authorization = () => {
     dispatch(login({ email, password }));
   };
   return (
-    <>
-      <h3>Authorization</h3>
-      <form onSubmit={onSubmit}>
-        <label>
+    <div className={css.block}>
+      <h3 className={css.title}>Authorization</h3>
+      <form onSubmit={onSubmit} className={css.form}>
+        <label className={css.label}>
           Email
           <input
+            className={css.input}
             required
             onChange={onInput}
             name="email"
@@ -31,9 +33,10 @@ export const Authorization = () => {
             type="email"
           />
         </label>
-        <label>
+        <label className={css.label}>
           Password
           <input
+            className={css.input}
             required
             onChange={onInput}
             name="password"
@@ -43,6 +46,6 @@ export const Authorization = () => {
         </label>
         <button type="submit">Login</button>
       </form>
-    </>
+    </div>
   );
 };

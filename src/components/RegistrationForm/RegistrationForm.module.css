@@ -1,0 +1,28 @@
+.block{
+  background-color: antiquewhite;
+  width: 300px;
+}
+
+.title {
+  text-align: center;
+  padding: 30px;
+  color: rgb(142, 71, 157);
+  margin: 0 auto;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.label{
+  text-align: center;
+  width: 100px;
+}
+
+.input{
+  margin-bottom: 10px;
+}

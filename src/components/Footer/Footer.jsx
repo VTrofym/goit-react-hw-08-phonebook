@@ -1,5 +1,6 @@
 import React from 'react';
+import css from './Footer.module.css';
 
 export default function Footer() {
-  return <div>Footer</div>;
+  return <footer className={css.footer}>Never forget your friends!!!</footer>;
 }
