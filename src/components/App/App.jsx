@@ -9,8 +9,8 @@ import Layout from 'components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import { Registration } from 'pages/Registration';
 import { Authorization } from 'pages/Authorization';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Suspense, useEffect } from 'react';
 import { currentUser } from 'redux/auth/auth-operations';
 
 // const Register = lazy(() => import('../../pages/Register'));
@@ -19,17 +19,22 @@ import { currentUser } from 'redux/auth/auth-operations';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const token = useSelector(state => state.auth.token);
 
   useEffect(() => {
-    dispatch(currentUser());
-  }, [dispatch]);
+    if (token) {
+      dispatch(currentUser());
+    }
+  }, [dispatch, token]);
 
   return (
     <Layout>
-      <Routes>
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Authorization />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Authorization />} />
+        </Routes>
+      </Suspense>
       <div className={css.allContent}>
         <ContactForm />
         <Filter />
