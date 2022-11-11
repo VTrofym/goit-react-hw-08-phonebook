@@ -7,11 +7,11 @@ export default function HomePage() {
     <div className={css.box}>
       <div className={css.home}>Hello! This is your new phone book!</div>
       <div className={css.photoBox}>
-        <img
+        {/* <img
           className={css.photo}
           src="https://drasler.ru/wp-content/uploads/2019/05/Скачать-gif-на-телефон-бесплатно-2.gif"
           alt="photo"
-        />
+        /> */}
       </div>
     </div>
   );

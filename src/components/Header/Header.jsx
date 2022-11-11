@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <header className={css.header}>
       <nav>
-        <NavLink to="/">
+        <NavLink to="/" className={css.icon}>
           <FcHome size={40} />
         </NavLink>
         {token && (
