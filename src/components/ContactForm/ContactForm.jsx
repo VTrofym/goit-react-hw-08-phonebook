@@ -27,6 +27,7 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
