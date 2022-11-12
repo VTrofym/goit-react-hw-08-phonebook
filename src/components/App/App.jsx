@@ -1,20 +1,18 @@
-// import { lazy } from 'react';
+import { lazy } from 'react';
 
 import Layout from 'components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
-import { Registration } from 'pages/Registration';
-import { Authorization } from 'pages/Authorization';
 import { useDispatch, useSelector } from 'react-redux';
 import { Suspense, useEffect } from 'react';
 import { currentUser } from 'redux/auth/auth-operations';
-import HomePage from 'pages/HomePage/HomePage';
-import Contacts from 'pages/Contacts';
 import PrivateRoutes from 'components/PrivateRoutes/PrivateRoutes';
 import PublicRoutes from 'components/PublicRoutes/PublicRoutes';
 
-// const Register = lazy(() => import('../../pages/Register'));
-// const Login = lazy(() => import('../../pages/Login'));
-// const Contacts = lazy(() => import('../../pages/Contacts'));
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const Registration = lazy(() => import('../../pages/Registration'));
+const Authorization = lazy(() => import('../../pages/Authorization'));
+const Contacts = lazy(() => import('../../pages/Contacts'));
+// const PublicRoutes = lazy(() => import('../PublicRoutes'));
 
 export const App = () => {
   const dispatch = useDispatch();
