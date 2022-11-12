@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactForm.module.css';
-// import { addContact } from 'redux/contacts/operations';
 import { postNewContact } from 'redux/auth/auth-operations';
 
 export const ContactForm = () => {

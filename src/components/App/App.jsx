@@ -1,9 +1,7 @@
-import { lazy } from 'react';
-
-import Layout from 'components/Layout/Layout';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Suspense, useEffect } from 'react';
+import Layout from 'components/Layout/Layout';
 import { currentUser } from 'redux/auth/auth-operations';
 import PrivateRoutes from 'components/PrivateRoutes/PrivateRoutes';
 import PublicRoutes from 'components/PublicRoutes/PublicRoutes';
@@ -26,7 +24,7 @@ export const App = () => {
 
   return (
     <Layout>
-      <Suspense fallback={null}>
+      <Suspense fallback={<p>Loading...</p>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/" element={<PublicRoutes />}>
