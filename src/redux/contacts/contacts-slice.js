@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getAllUserContacts, postNewContact, removeContact } from 'redux/auth/auth-operations';
+import { getAllUserContacts, postNewContact, removeContact,  } from './contacts-operations';
 
 const Status = {
   init: "INIT",

@@ -3,7 +3,10 @@ import { getContacts } from 'redux/contacts/contacts-selectors';
 
 import css from './ContactList.module.css';
 import { useEffect } from 'react';
-import { getAllUserContacts, removeContact } from 'redux/auth/auth-operations';
+import {
+  getAllUserContacts,
+  removeContact,
+} from 'redux/contacts/contacts-operations';
 
 export function ContactList() {
   const dispatch = useDispatch();
